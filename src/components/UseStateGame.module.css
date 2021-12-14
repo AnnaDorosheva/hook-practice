@@ -1,6 +1,7 @@
 .game {
-  width: 600px;
+  width: 400px;
   background-color: azure;
   align-items: center;
+  border: 1px solid black;
   margin: 0 auto;
 }

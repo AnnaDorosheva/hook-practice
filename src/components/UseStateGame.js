@@ -11,16 +11,25 @@ const UseStateGame = () => {
         <div>{plaer1Counter}</div>
         <button onClick={() => {
           setPlaer1Counter(plaer1Counter + 1)
-        }}></button>
+        }}>+</button>
       </div>
-
+<hr/>
       <div>
         <h2>Gena</h2>
         <div>{plaer2Counter}</div>
         <button onClick={() => {
           setPlaer2Counter(plaer2Counter + 1)
-        }}></button>
+        }}>+</button>
       </div>
+      <hr/>
+      <button onClick={() => {
+        setPlaer1Counter(plaer1Counter - 2);
+        setPlaer2Counter(plaer2Counter - 2)
+      }}>-</button>
+      <button onClick={() => {
+        setPlaer1Counter(Number(plaer1Counter === 0));
+        setPlaer2Counter(Number(plaer2Counter === 0))
+      }}>RESET</button>
       
     </div>
   )
