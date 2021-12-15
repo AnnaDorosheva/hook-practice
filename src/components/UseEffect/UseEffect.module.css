@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  width: 600px;
+  justify-content: space-around;
+  background-color: beige;
+  border: 1px solid black;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 12px;
+}
+.selected {
+  background-color: rgb(187, 187, 230);
+}
