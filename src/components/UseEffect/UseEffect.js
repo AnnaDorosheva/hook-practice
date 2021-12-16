@@ -6,9 +6,10 @@ import s from "./UseEffect.module.css";
 
 const Github = () => {
   const [selectedUser, setSelectedUser] = useState("");
+  const [activeUser, setActiveUser] = useState(null);
   const [users, setUsers] = useState([]);
-  const [tempSearch, setTemlSearch] = useState("it-camasutra");
-  // const [] = useState("it-camasutra")
+  const [tempSearch, setTemlSearch] = useState("it-kamasutra");
+  const [searchTerm, setSearchTerm] = useState("it-kamasutra")
 
   useEffect (() => {
 if(selectedUser) {
@@ -17,21 +18,21 @@ if(selectedUser) {
   }, [selectedUser]);
 
   useEffect(() => {
-axios.get(`https://api.github.com/search/users?q=it&per_page=10`).then(responce => setUsers(responce.data.items));
-  }, []);
+    axios.get(`https://api.github.com/search/users?q=${searchTerm}&per_page=10`).then(responce => setUsers(responce.data.items));
+  }, [searchTerm]);
+
+  useEffect(() => {
+    if(selectedUser) {
+      axios.get(`https://api.github.com/users/${selectedUser.login}`).then(responce => setActiveUser(responce.data));
+    }
+  }, [selectedUser]);
 
   return (
     <section className={s.container}>
       <div>
         <input onChange={(e) =>{return setTemlSearch(e.target.value)}} placeholder="search..."></input>
-        <button onClick={() => {
-          axios.get(`https://api.github.com/search/users?q=${tempSearch}&per_page=10`).then(responce => {
-            console.log(tempSearch);
-            console.log(responce.data.items);
-            console.log(users);
-            return setUsers(responce.data.items)});
-        }}>Find</button>
-        <ul>
+        <button onClick={() => setSearchTerm(tempSearch)}>Find</button>
+        <ul className={s.usersNames}>
           {users.map((u) => (
             <li
               key={u.id}
@@ -48,7 +49,13 @@ axios.get(`https://api.github.com/search/users?q=it&per_page=10`).then(responce 
       </div>
       <div>
         <h2>User name</h2>
-        <p>Details</p>
+        {activeUser && <div>
+          <img src={activeUser.avatar_url} alt="avatar" width="300" />
+        <p>Login: {activeUser.login}</p>
+        <p>Name: {activeUser.name}</p>
+        <p>Location: {activeUser.location}</p>
+        <a href={activeUser.url}>URL on github</a>
+        </div>}
       </div>
     </section>
   );
