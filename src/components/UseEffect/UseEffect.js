@@ -1,32 +1,40 @@
 import axios from "axios";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import s from "./UseEffect.module.css";
 
-// const api = "https://api.github.com/users?q=it";
+// const api = "https://api.github.com/search/users?q=it";
 
 const Github = () => {
-  const [selectedUser, setSelectedUser] = React.useState("");
-  const [users, setUsers] = React.useState([]);
+  const [selectedUser, setSelectedUser] = useState("");
+  const [users, setUsers] = useState([]);
+  const [tempSearch, setTemlSearch] = useState("it-camasutra");
+  // const [] = useState("it-camasutra")
 
-  React.useEffect (() => {
+  useEffect (() => {
 if(selectedUser) {
   document.title = selectedUser.login;
 }
   }, [selectedUser]);
 
-  React.useEffect(() => {
-axios.get("https://api.github.com/users?q=it").then(responce => setUsers(responce.data));
-  }, [])
+  useEffect(() => {
+axios.get(`https://api.github.com/search/users?q=it&per_page=10`).then(responce => setUsers(responce.data.items));
+  }, []);
 
   return (
     <section className={s.container}>
       <div>
-        <input placeholder="search..."></input>
-        <button>Find</button>
+        <input onChange={(e) =>{return setTemlSearch(e.target.value)}} placeholder="search..."></input>
+        <button onClick={() => {
+          axios.get(`https://api.github.com/search/users?q=${tempSearch}&per_page=10`).then(responce => {
+            console.log(tempSearch);
+            console.log(responce.data.items);
+            console.log(users);
+            return setUsers(responce.data.items)});
+        }}>Find</button>
         <ul>
-          {users.map((u, idx) => (
+          {users.map((u) => (
             <li
-              key={idx}
+              key={u.id}
               onClick={() => {
                 console.log(u.login);
                 setSelectedUser(u);
