@@ -11,8 +11,7 @@ import User from "./User";
 const Github = () => {
   const [selectedUser, setSelectedUser] = useState("");
   const [activeUser, setActiveUser] = useState(null);
-  // const [users, setUsers] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("annadorosheva");
+  const [searchTerm, setSearchTerm] = useState("it");
 
   useEffect(() => {
     if (selectedUser) {
@@ -23,23 +22,11 @@ const Github = () => {
   return (
     <section className={s.container}>
       <div>
-        <Search value={searchTerm} onSubmit={(value) => setSearchTerm(value)}/>
-        <button onClick={() => {setSearchTerm(".."); setActiveUser(null)}}>Reset</button>
+        <Search value={searchTerm} onSubmit={setSearchTerm}/>
+        <button onClick={() => {setSearchTerm("a"); setActiveUser(null)}}>Reset</button>
         <UsersList setSelectedUser={setSelectedUser} selectedUser={selectedUser}  searchTerm={searchTerm} setActiveUser={setActiveUser}/>
       </div>
-      <User activeUser={activeUser}/>
-      {/* <div>
-        <h2>User info:</h2>
-        {activeUser && (
-          <div className={s.user}>
-            <img src={activeUser.avatar_url} alt="avatar" width="300" />
-            <p>Login: {activeUser.login}</p>
-            <p>Name: {activeUser.name}</p>
-            <p>Location: {activeUser.location}</p>
-            <a href={activeUser.html_url}>URL on github</a>
-          </div>
-        )}
-      </div> */}
+      <User activeUser={activeUser} setActiveUser={setActiveUser}/>
     </section>
   );
 };

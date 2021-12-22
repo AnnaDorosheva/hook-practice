@@ -11,6 +11,8 @@
 }
 .container:hover {
   transform: scale(1.02);
+  padding: 16px;
+  margin-top: 20px;
 }
 .selected {
   background-color: rgb(187, 187, 230);

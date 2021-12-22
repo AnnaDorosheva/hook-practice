@@ -8,3 +8,6 @@
 .user:hover {
   transform: scale(1.02)
 }
+.userContainer {
+  padding: 10px;
+}
