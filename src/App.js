@@ -1,12 +1,12 @@
 import React from "react";
-import "./App.css";
+import s from "./App.module.css";
 import UseStateGame from "./components/UseState/UseStateGame";
-import Github from "./components/UseEffect/UseEffect";
+import GithubSearchUsers from "./components/UseEffect/UseEffect";
 
 function App() {
   return (
-    <div className="App">
-      <Github />
+    <div className={s.App}>
+      <GithubSearchUsers />
       <UseStateGame />
     </div>
   );

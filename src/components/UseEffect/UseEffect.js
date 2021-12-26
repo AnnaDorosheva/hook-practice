@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from "react";
 import s from "./UseEffect.module.css";
 import Search from "./Search";
-import UsersList from "./UsersList";
-import User from "./User";
+import UsersList from "./UserList/UsersList";
+import User from "./User/User";
 
 // const api = "https://api.github.com/search/users?q=it";
 
 
-const Github = () => {
+const GithubSearchUsers = () => {
   const [selectedUser, setSelectedUser] = useState("");
   const [activeUser, setActiveUser] = useState(null);
   const [searchTerm, setSearchTerm] = useState("it");
@@ -24,6 +24,7 @@ const Github = () => {
       <div>
         <Search value={searchTerm} onSubmit={setSearchTerm}/>
         <button onClick={() => {setSearchTerm("a"); setActiveUser(null)}}>Reset</button>
+        <h2>Users:</h2>
         <UsersList setSelectedUser={setSelectedUser} selectedUser={selectedUser}  searchTerm={searchTerm} setActiveUser={setActiveUser}/>
       </div>
       <User activeUser={activeUser} setActiveUser={setActiveUser}/>
@@ -31,4 +32,4 @@ const Github = () => {
   );
 };
 
-export default Github;
+export default GithubSearchUsers;
