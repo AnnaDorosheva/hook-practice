@@ -5,3 +5,7 @@
   border: 1px solid black;
   margin: 0 auto;
 }
+.gameName {
+  font-family: "Permanent Marker";
+  color: #4d4a4a;
+}

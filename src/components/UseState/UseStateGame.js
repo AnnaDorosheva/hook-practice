@@ -11,7 +11,7 @@ const UseStateGame = () => {
   });
   return (
     <div className={s.game}>
-      <h2>GAME</h2>
+      <h2 className={s.gameName}>GAME</h2>
       <hr />
       <div>
         <h3>Ivan</h3>

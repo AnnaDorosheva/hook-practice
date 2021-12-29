@@ -20,7 +20,9 @@ const GithubSearchUsers = () => {
   }, [selectedUser]);
 
   return (
-    <section className={s.container}>
+    <section>
+      <h2 className={s.name}>Search users on GitHub</h2>
+      <div className={s.container}>
       <div>
         <Search value={searchTerm} onSubmit={setSearchTerm}/>
         <button onClick={() => {setSearchTerm("a"); setActiveUser(null)}}>Reset</button>
@@ -28,6 +30,7 @@ const GithubSearchUsers = () => {
         <UsersList setSelectedUser={setSelectedUser} selectedUser={selectedUser}  searchTerm={searchTerm} setActiveUser={setActiveUser}/>
       </div>
       <User activeUser={activeUser} setActiveUser={setActiveUser}/>
+      </div>
     </section>
   );
 };
