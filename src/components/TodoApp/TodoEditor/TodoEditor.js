@@ -18,8 +18,8 @@ const TodoEditor = ({ onSave }) => {
   };
   return (
     <div>
-      <form onSubmit={submitTodo}>
-        <input type="text" value={todoText} onChange={onChangeTodoText} />
+      <form onSubmit={submitTodo} className={s.form}>
+        <input type="text" value={todoText} onChange={onChangeTodoText} className={s.input}/>
         <button type="submit">Save</button>
       </form>
     </div>

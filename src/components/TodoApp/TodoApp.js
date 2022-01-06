@@ -16,7 +16,7 @@ const Todo = () => {
   return (
     <div className={s.todoContainer}>
       <h2>Todo App ( Приложение для планирования задач )</h2>
-      <p>Create your day, create your life...</p>
+      <p className={s.signature}>Create your day, create your life...</p>
       <TodoEditor onSave={addTodos} />
       <TodoList deleteTodo={deleteTodo} todos={todos} />
     </div>

@@ -8,8 +8,8 @@ const TodoList = ({todos, deleteTodo}) => {
         <ul className={s.todoContainer}>
           {todos.map(({ id, text }) => (
             <li key={id} className={s.todo}>
-              <p>{text}</p>
-              <button onClick={() => deleteTodo(id)}>Delete</button>
+              <p className={s.textTodo}>{text}</p>
+              <button onClick={() => deleteTodo(id)} className={s.buttonDelete}>Delete</button>
             </li>
           ))}
         </ul>
