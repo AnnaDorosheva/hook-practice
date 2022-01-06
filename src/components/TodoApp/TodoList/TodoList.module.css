@@ -1,0 +1,19 @@
+.todoListContainer {
+  min-height: 100px;
+  -webkit-box-shadow: 5px 5px 15px 5px #5e5a5a; 
+  box-shadow: 5px 5px 15px 5px #868282;
+  margin: 10px;
+}
+.todo {
+  display: flex;
+  width: 32%;
+  flex-wrap: wrap;
+  border: 1px solid gray;
+  overflow: hidden;
+  margin: 4px;
+}
+.todoContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}

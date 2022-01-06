@@ -4,6 +4,7 @@ import s from "./App.module.css";
 import UseStateGame from "./components/UseState/UseStateGame";
 import GithubSearchUsers from "./components/UseEffect/UseEffect";
 import Navigation from "./components/Navigation/Navigation";
+import Todo from "./components/TodoApp/TodoApp";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Navigation />
       <Routes>
         <Route path="useeffect" element={<GithubSearchUsers />} />
+        <Route path="todoapp" element={<Todo />} />
         <Route path="usestate" element={<UseStateGame />} />
         <Route
           path="*"

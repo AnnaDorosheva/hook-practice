@@ -15,6 +15,9 @@ const Navigation = () => {
         <Link to="/useeffect">
           Search GitHub users ( Поиск пользователей GitHub )
         </Link>
+        <Link to="/todoapp">
+          Todo App ( Приложение для планирования задач )
+        </Link>
         <Link to="/usestate">The game ( Игра ) </Link>
       </nav>
     </header>
