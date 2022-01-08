@@ -1,17 +1,18 @@
-.nav {
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 20px 40px;
-height: 200px;
-font-size: 24px;
-font-weight: 600;
-}
 .header {
   display: flex;
   color: #4d4a4a;
   background-color: bisque;
 }
+
+.nav {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 20px 40px;
+font-size: 24px;
+font-weight: 600;
+}
+
 .logo {
   width: 80px;
   height: 120px;
