@@ -3,3 +3,10 @@
     font-size: 20px;
     color: rgb(100, 93, 93);
 }
+.header {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid gray;
+    background-color: rgb(233, 224, 224);
+    margin: 10px;
+}
