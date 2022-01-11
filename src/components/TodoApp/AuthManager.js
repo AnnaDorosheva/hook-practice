@@ -7,11 +7,11 @@ const AuthManager = () => {
   const notif = useContext(notificationContext);
   const logout = () => {
     logOut();
-    notif.addMessage("WELCOME!!!!");
+    notif.addMessage("SEE YOU SOON!");
   };
   const login = () => {
     logIn();
-    notif.addMessage("SEE YOU SOON!");
+    notif.addMessage("WELCOME!!!!");
   };
   return (
     <div>
