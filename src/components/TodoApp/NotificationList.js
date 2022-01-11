@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import s from "./NotificationList.module.css";
 import { authenticationContext } from "../contexts/authentication";
 
@@ -33,13 +33,3 @@ const NotificationList = ({ items, onRemove }) => {
       }
 export default NotificationList;
 
-{/* <div className={s.notifContainer}>
-{items.map(item => (
-  <li key={item.id} className={s.notif} ref={notification} >
-    <p>{item.text}</p>
-    <button type="button" onClick={() => onRemove(item.id)}>
-    &#10006;
-    </button>
-  </li>
-))}
-</div> */}
