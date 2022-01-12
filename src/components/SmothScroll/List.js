@@ -31,11 +31,6 @@ const List = () => {
           >
             {todo.id}. {todo.title}
           </li>
-        ))}
       </ul>
       <div ref={child} style={{ height: 20, background: "blue" }}></div>
     </div>
-  );
-};
-
-export default List;
