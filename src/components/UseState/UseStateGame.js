@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import s from "./UseStateGame.module.css";
+import { notificationContext } from "../contexts/notification";
 
 const UseStateGame = () => {
   // const [plaer1Counter, setPlaer1Counter] = React.useState(10);
   // const [plaer2Counter, setPlaer2Counter] = React.useState(10);
+ const {addMessage }= useContext(notificationContext);
 
   const [players, setCounter] = React.useState({
     player1: 6,
     player2: 10,
   });
+
+  const player1Plas = () => {
+    setCounter((players) => {
+      return {
+      ...players,
+      player1: players.player1 + 1,
+    }});
+  };
+  const player2Plas = () => {
+    setCounter((players) => {
+      return{
+      ...players,
+      player2: players.player2 + 1,
+    }});
+  };
+
   return (
     <div className={s.game}>
       <h2 className={s.gameName}>GAME</h2>
@@ -17,13 +35,7 @@ const UseStateGame = () => {
         <h3>Ivan</h3>
         <div>{players.player1}</div>
         <button
-          onClick={() => {
-            setCounter((players) => {
-              return {
-              ...players,
-              player1: players.player1 + 1,
-            }});
-          }}
+          onClick={player1Plas}
         >
           +
         </button>
@@ -33,13 +45,7 @@ const UseStateGame = () => {
         <h3>Gena</h3>
         <div>{players.player2}</div>
         <button
-          onClick={() => {
-            setCounter((players) => {
-              return{
-              ...players,
-              player2: players.player2 + 1,
-            }});
-          }}
+          onClick={player2Plas}
         >
           +
         </button>
