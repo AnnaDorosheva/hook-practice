@@ -31,7 +31,7 @@ const UsersList = ({
     setLoader(true);
     axios
       .get(
-        `https://api.github.com/search/users?q=${searchTerm}&per_page=15&page=${page}`
+        `https://api.github.com/search/users?q=${searchTerm}&per_page=10&page=${page}`
       )
       .then((responce) => {
         setUsers(responce.data.items);
