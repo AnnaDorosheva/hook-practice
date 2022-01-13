@@ -12,6 +12,7 @@ const UsersList = ({
   const [users, setUsers] = useState([]);
   const [isLoader, setLoader] = useState(false);
   const [page, setPage] = useState(1);
+  const [totalUsers, setTotalUsers] = useState(null)
 
   // Render Selected User
   useEffect(() => {
@@ -35,6 +36,7 @@ const UsersList = ({
       )
       .then((responce) => {
         setUsers(responce.data.items);
+        setTotalUsers(responce.data.total_count);
         setLoader(false);
       });
   }, [searchTerm, page]);
@@ -56,6 +58,8 @@ const UsersList = ({
   return (
     <>
       {isLoader ? <LoaderSpinner /> : null}
+      <h3>Found {totalUsers} users</h3>
+      <h2>Users:</h2>
       <ul className={s.usersNames}>
         {users.map((u) => (
           <li

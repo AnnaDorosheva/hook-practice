@@ -26,7 +26,6 @@ const GithubSearchUsers = () => {
       <div>
         <Search value={searchTerm} onSubmit={setSearchTerm}/>
         <button onClick={() => {setSearchTerm("a"); setActiveUser(null)}}>Reset</button>
-        <h2>Users:</h2>
         <UsersList setSelectedUser={setSelectedUser} selectedUser={selectedUser}  searchTerm={searchTerm} setActiveUser={setActiveUser}/>
       </div>
       <User activeUser={activeUser} setActiveUser={setActiveUser}/>

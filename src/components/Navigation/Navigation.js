@@ -19,6 +19,7 @@ const Navigation = () => {
           Todo App ( Приложение для планирования задач )
         </Link>
         <Link to="/usestate">The game ( Игра ) </Link>
+        <Link to="/smoothscroll">Smooth Scroll whith hooks (Бесконечный скролл на хуках) </Link>
       </nav>
     </header>
   );

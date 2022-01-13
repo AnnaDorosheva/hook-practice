@@ -5,6 +5,7 @@ import UseStateGame from "./components/UseState/UseStateGame";
 import GithubSearchUsers from "./components/UseEffect/UseEffect";
 import Navigation from "./components/Navigation/Navigation";
 import Todo from "./components/TodoApp/TodoApp";
+import List from "./components/SmothScroll/List";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="useeffect" element={<GithubSearchUsers />} />
         <Route path="todoapp" element={<Todo />} />
         <Route path="usestate" element={<UseStateGame />} />
+        <Route path="smoothscroll" element={<List />} />
         <Route
           path="*"
           element={
