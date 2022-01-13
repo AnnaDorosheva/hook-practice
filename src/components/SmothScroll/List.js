@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import useScroll from "./Scroll";
 
 const List = () => {
   const [todos, setTodos] = useState([]);
   const [page, setPage] = useState(1);
-  const limit = 8;
+  const [error, setError] = useState("")
+  const limit = 3;
 
   const parent = useRef(null);
   const child = useRef(null);
@@ -18,19 +19,20 @@ const List = () => {
       .then((data) => {
         setTodos((prev) => [...prev, ...data]);
         setPage((prev) => prev + 1);
-      });
+      }).catch(error => setError(error));
   };
 
   return (
-    <div style={{ overflow: "auto", height: "80vh" }} ref={parent}>
-      <ul style={{ listStyle: "none", padding: 0 }}>
-        {todos.map((todo) => (
-          <li
+  
+      <div style={{ overflow: "auto", height: "50vh" }} ref={parent}>
+        {error ? <h1>Some error...</h1> : (todos.map((todo) =>           <p
             key={todo.id}
             style={{ margin: 8, padding: 30, border: "2px solid grey" }}
           >
-            {todo.id}. {todo.title}
-          </li>
-      </ul>
+            {todo.id}.{todo.title}
+          </p>))}
       <div ref={child} style={{ height: 20, background: "blue" }}></div>
-    </div>
+      </div>
+  )};
+
+  export default List;

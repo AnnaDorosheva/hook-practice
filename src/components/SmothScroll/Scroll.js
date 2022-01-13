@@ -22,6 +22,7 @@ if(target.isIntersecting) {
       observer.current.unobserve(childRef.current);  
     }
   }, [callback]);
+
   return (
     <div>
       

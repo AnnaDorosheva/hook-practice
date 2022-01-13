@@ -1,11 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import s from "./UseStateGame.module.css";
-import { notificationContext } from "../contexts/notification";
+
 
 const UseStateGame = () => {
-  // const [plaer1Counter, setPlaer1Counter] = React.useState(10);
-  // const [plaer2Counter, setPlaer2Counter] = React.useState(10);
- const {addMessage }= useContext(notificationContext);
+
 
   const [players, setCounter] = React.useState({
     player1: 6,
