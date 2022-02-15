@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+ссылка на рабочую страничку: https://annadorosheva.github.io/hook-practice
+Практика hooks и др. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

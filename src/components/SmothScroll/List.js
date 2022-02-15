@@ -29,7 +29,7 @@ const List = () => {
             key={todo.id}
             style={{ margin: 8, padding: 30, border: "2px solid grey" }}
           >
-            {todo.id}.{todo.title}
+            {todo.id}. {todo.title}
           </p>))}
       <div ref={child} style={{ height: 20, background: "blue" }}></div>
       </div>
