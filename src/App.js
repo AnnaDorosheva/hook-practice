@@ -6,6 +6,7 @@ import GithubSearchUsers from "./components/UseEffect/UseEffect";
 import Navigation from "./components/Navigation/Navigation";
 import Todo from "./components/TodoApp/TodoApp";
 import List from "./components/SmothScroll/List";
+import DragDrop from "./components/DragDrop/DragDrop";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           }
         />
       </Routes>
+      <DragDrop />
     </div>
   );
 }
