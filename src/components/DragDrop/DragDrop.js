@@ -8,7 +8,7 @@ const DragDrop = () => {
     { id: 2, order: 1, text: "KARD 1" },
     { id: 3, order: 2, text: "KARD 2" },
     { id: 4, order: 4, text: "KARD 4" },
-    // { id: 5, order: 5, text: "KARD 5" },
+    { id: 5, order: 5, text: "KARD 5" },
   ]);
 
   const [currentCard, setCurrentCard] = React.useState(null);
@@ -18,7 +18,7 @@ const DragDrop = () => {
     setCurrentCard(card);
   };
   function dragEndHandler(e) {
-    e.target.style.background = "white";
+    e.target.style.background = "rgb(216 232 247)";
   };
   function dragOverHandler(e) {
     e.preventDefault();
@@ -26,7 +26,6 @@ const DragDrop = () => {
   };
 
   function dropHandler(e, card) {
-    console.log("drop", card);
     e.preventDefault();
    setCardList(cardList.map(c => {
     if(c.id === card.id) {
@@ -49,6 +48,8 @@ if(a.order > b.order) {
   };
 
   return (
+    <section>
+      <h2>DRAG&DROP (перетаскивание компонентов мышью)</h2>
     <div className={s.container}>
       {cardList.sort(sortCards).map((card) => (
         <div
@@ -65,6 +66,7 @@ if(a.order > b.order) {
         </div>
       ))}
     </div>
+    </section>
   );
 };
 
