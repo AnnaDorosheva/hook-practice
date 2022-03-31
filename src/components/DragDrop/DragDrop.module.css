@@ -15,4 +15,8 @@
     align-items: center;
     margin: 20px;
     cursor: grab;
+    transition: 0.5s;
+}
+.card:hover {
+    transform: scale(1.04)
 }

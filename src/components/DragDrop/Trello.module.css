@@ -1,0 +1,12 @@
+.trello {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.board {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid grey;
+    border-radius: 15px;
+    width: 30%;
+}

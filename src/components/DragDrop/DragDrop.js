@@ -14,7 +14,6 @@ const DragDrop = () => {
   const [currentCard, setCurrentCard] = React.useState(null);
 
   function dragStartHandler(e, card) {
-    console.log("drag", card);
     setCurrentCard(card);
   };
   function dragEndHandler(e) {

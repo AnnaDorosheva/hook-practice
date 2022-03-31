@@ -7,6 +7,8 @@ import Navigation from "./components/Navigation/Navigation";
 import Todo from "./components/TodoApp/TodoApp";
 import List from "./components/SmothScroll/List";
 import DragDrop from "./components/DragDrop/DragDrop";
+import Trello from "./components/DragDrop/Trello";
+import Pokemon from "./components/Pokemons/Pokemom/Pokemon";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="todoapp" element={<Todo />} />
         <Route path="usestate" element={<UseStateGame />} />
         <Route path="smoothscroll" element={<List />} />
+        <Route path="pokemon" element={<Pokemon />} />
+        <Route path="draganddrop" element={<DragDrop />} />
         <Route
           path="*"
           element={
@@ -26,7 +30,6 @@ function App() {
           }
         />
       </Routes>
-      <DragDrop />
     </div>
   );
 }
