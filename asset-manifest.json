@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/hook-practice/static/css/main.e6f6a330.css",
-    "main.js": "/hook-practice/static/js/main.eea3df75.js",
+    "main.css": "/hook-practice/static/css/main.f17ea82a.css",
+    "main.js": "/hook-practice/static/js/main.7a62b5cf.js",
     "static/js/787.9bd40621.chunk.js": "/hook-practice/static/js/787.9bd40621.chunk.js",
+    "static/media/error.jpg": "/hook-practice/static/media/error.1be38b679106bcd49595.jpg",
+    "static/media/happy-emoji-svgrepo-com.svg": "/hook-practice/static/media/happy-emoji-svgrepo-com.c0ca115abd4c590d5b7ae44e0e52cad2.svg",
     "index.html": "/hook-practice/index.html",
-    "main.e6f6a330.css.map": "/hook-practice/static/css/main.e6f6a330.css.map",
-    "main.eea3df75.js.map": "/hook-practice/static/js/main.eea3df75.js.map",
+    "main.f17ea82a.css.map": "/hook-practice/static/css/main.f17ea82a.css.map",
+    "main.7a62b5cf.js.map": "/hook-practice/static/js/main.7a62b5cf.js.map",
     "787.9bd40621.chunk.js.map": "/hook-practice/static/js/787.9bd40621.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6f6a330.css",
-    "static/js/main.eea3df75.js"
+    "static/css/main.f17ea82a.css",
+    "static/js/main.7a62b5cf.js"
   ]
 }
