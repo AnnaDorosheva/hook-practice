@@ -1,33 +1,44 @@
 import React, { Component } from "react";
 import { toast } from "react-toastify";
+import PokemonError from "../PokemonError";
+import PokemonData from "../PokemonData";
+import PokemonSpinner from "../PokemonSpinner";
+import {pokemonApi} from "../pokemon-api";
 
 export default class PokemonInfo extends Component {
   state = {
     pokemon: null,
-    isLoading: false,
+    status: "idle",
+    error: null,
   };
 
   componentDidUpdate(prevProps, prevState) {
-
     const prevName = prevProps.name;
     const nextName = this.props.name;
-
+console.log(this.state.pokemon)
     if (prevName !== nextName) {
-      this.setState({ isLoading: true });
-      toast(`I finde a pokemon ${nextName}`);
-      fetch(`https://pokeapi.co/api/v2/pokemon/${nextName}`)
-        .then((res) => res.json()).then((pokemon) => this.setState({ pokemon })).finally(() => this.setState({ isLoading: false }));
+      this.setState({ status: "pending" });
+      toast(`I'm traing to finde a pokemon ${nextName}`);
+
+      pokemonApi(nextName).then((pokemon) => this.setState({ status: "resolved", pokemon }))
+        .catch((error) => this.setState({ status: "redjected", error }));
     }
   }
   render() {
-    const {isLoading, pokemon} = this.state;
-    const {pokemonName} = this.props;
-    return (
-      <>
-        {isLoading && <div>"Загружаем..."</div>}
-        {!pokemonName && <div>"Введите имя покемона!"</div>}
-        {pokemon && <h1>{pokemon.name}</h1>}
-      </>
-    );
+    const { pokemon, error, status } = this.state;
+    const { pokemonName } = this.props;
+
+    if (status === "idle") {
+      return <div>Введите имя покемона!</div>;
+    }
+    if (status === "pending") {
+      return <PokemonSpinner pokemonName={pokemonName}/>;
+    }
+    if (status === "redjected") {
+      return <PokemonError message={error.message} />;
+    }
+    if (status === "resolved") {
+      return <PokemonData pokemon={pokemon} />;
+    }
   }
 }
