@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {ReactComponent as MyIcon} from "../../svg/happy-emoji-svgrepo-com.svg";
 import { toast } from 'react-toastify';
+import s from "./PokemonForm.module.css";
 
 export default class PokemonForm extends Component {
   state = {
@@ -24,15 +25,16 @@ export default class PokemonForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.hendleSubmit}>
+      <form onSubmit={this.hendleSubmit} className={s.form}>
         <input
           type="text"
           name="pokemoneName"
           value={this.state.pokemonName}
           onChange={this.hendleNameChange}
+          className={s.input}
         />
-        <button type="submit">
-        <MyIcon width={28} height={28}/> Найти
+        <button type="submit" className={s.button}>
+        <MyIcon width={20} height={20} className={s.icon}/> Найти
         </button>
       </form>
     );

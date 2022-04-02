@@ -7,7 +7,7 @@ export const pokemonApi = (name) => {
       return res.json();
     }
     return Promise.reject(
-      new Error(`Все пропало, нет покемона с именем ${name}`)
+      new Error(`Все пропало, нет покемона с именем ${name}...`)
     );
   })
 };

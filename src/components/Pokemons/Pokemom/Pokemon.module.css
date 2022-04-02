@@ -1,0 +1,12 @@
+.pokemonContainer {
+    width: 600px;
+    height: 600px;
+    background-color: rgb(206, 206, 203);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+    -23px 0 20px -23px rgba(0, 0, 0, .6),
+    23px 0 20px -23px rgba(0, 0, 0, .6),
+    inset 0 0 40px rgba(0, 0, 0, .1);
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
